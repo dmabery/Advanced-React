@@ -1,5 +1,9 @@
-export default function Products() {
+import Products from '../components/Products'
+
+export default function OrderPage() {
     return (
-            <h1>Products</h1>
+        <div>
+            <Products />
+        </div>
     )
 }
