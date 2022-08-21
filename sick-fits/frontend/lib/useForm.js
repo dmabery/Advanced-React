@@ -10,7 +10,7 @@ export default function useForm(initial = []) {
             value = parseInt(value);
         }
         if(type === 'file'){
-            value[0] = e.target.files;
+            [value] = e.target.files;
         }
         setInputs({
             // copy the exisisting state
@@ -19,9 +19,22 @@ export default function useForm(initial = []) {
         });
     }
 
+    function resetForm() {
+        setInputs(initial);
+    }
+
+    function clearForm() {
+        const blankState = Object.fromEntries(
+            Object.entries(inputs).map(([key, value]) => [key, ''])
+        );
+        setInputs(blankState);
+    }
+
     // return the things we want to surface from this custom hook
     return {
         inputs,
-        handleChange
+        handleChange,
+        resetForm,
+        clearForm,
     }
 }
