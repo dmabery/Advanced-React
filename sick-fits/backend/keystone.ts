@@ -3,7 +3,7 @@ import { createAuth } from '@keystone-next/auth';
 import { config, createSchema } from '@keystone-next/keystone/schema';
 import {
   statelessSessions,
-  withItemData
+  withItemData,
 } from '@keystone-next/keystone/session';
 import 'dotenv/config';
 import { Product } from './schemas/Product';
