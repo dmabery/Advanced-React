@@ -34,6 +34,7 @@ const UPDATE_PRODUCT_MUTATION = gql`
   }
 `;
 
+// eslint-disable-next-line react/prop-types
 export default function UpdateProduct({ id }) {
   // Get exisiting product
   const { data, error, loading } = useQuery(SINGLE_PRODUCT_QUERY, {
